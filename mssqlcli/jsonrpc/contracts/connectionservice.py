@@ -1,7 +1,10 @@
-from mssqlcli.jsonrpc.contracts import Request
-
 import logging
 
+from mssqlcli.jsonrpc.contracts import Request
+from mssqlcli.i18n import translate
+
+
+_ = translate()
 logger = logging.getLogger(u'mssqlcli.connectionservice')
 
 
@@ -50,7 +53,7 @@ class ConnectionRequest(Request):
                     u'ownerUri': self.owner_uri,
                     u'connectionId': None,
                     u'messages': str(error),
-                    u'errorMessage': u'Connection request encountered an exception',
+                    u'errorMessage': _(u'Connection request encountered an exception'),
                     u'errorNumber': None
                 }
             })
