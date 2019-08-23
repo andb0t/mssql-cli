@@ -1,10 +1,8 @@
 import logging
 
 from mssqlcli.jsonrpc.contracts import Request
-from mssqlcli.i18n import translate
+from mssqlcli.main import _
 
-
-_ = translate()
 logger = logging.getLogger(u'mssqlcli.connectionservice')
 
 

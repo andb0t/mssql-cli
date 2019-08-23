@@ -1,20 +1,24 @@
 from __future__ import unicode_literals
 from __future__ import print_function
+from builtins import input
+from mssqlcli.config import config_location
+from mssqlcli.__init__ import __version__
+from mssqlcli.mssqlclioptionsparser import create_parser
+
+import mssqlcli.telemetry as telemetry_session
 
 import click
 import getpass
+import gettext
 import os
 import sys
 
 
-from builtins import input
-
-from mssqlcli.config import config_location
-from mssqlcli.__init__ import __version__
-from mssqlcli.mssqlclioptionsparser import create_parser
-import mssqlcli.telemetry as telemetry_session
-
 click.disable_unicode_literals_warning = True
+
+translation = gettext.translation('mssql-cli', localedir='locale', fallback=True)
+translation.install()
+_ = translation.gettext
 
 try:
     from urlparse import urlparse, unquote, parse_qs

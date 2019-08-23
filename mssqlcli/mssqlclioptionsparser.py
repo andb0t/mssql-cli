@@ -3,10 +3,7 @@ import mssqlcli
 import os
 
 from .config import config_location
-from mssqlcli.i18n import translate
-
-
-_ = translate()
+from mssqlcli.main import _
 
 MSSQL_CLI_USER = u'MSSQL_CLI_USER'
 MSSQL_CLI_PASSWORD = u'MSSQL_CLI_PASSWORD'
